@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 const Home = lazy(() => import('./home'))
 const List = lazy(() => import('./list'))
-const $404 = () => <div>404</div>
+const NotFound = () => <div>404</div>
 
 export default class App extends Component {
   
@@ -16,18 +16,9 @@ export default class App extends Component {
         <Switch>
           <Route path='/' component={props => <Home {...props}/>}/>
           <Route exact path='/list' component={props => <List {...props}/>}/>
-          <Route component={$404}/>
+          <Route component={NotFound}/>
         </Switch>
       </Suspense>
     </Router>
   }
 }
-
-// const App = <Router>
-//   <Suspense fallback={<div>loading...</div>}>
-//     <Switch>
-//       <Route path='/' component={Home}/>
-//       <Route path='/list' component={List}/>
-//     </Switch>
-//   </Suspense>
-// </Router>
