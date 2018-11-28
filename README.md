@@ -42,5 +42,16 @@ yarn start
 yarn build #目前还未实现
 ```
 
+### 项目实例截图
 
+#### home page
 
+![Image text](https://github.com/xpioneer/react16-lazy/blob/master/pictures/home.jpg)
+
+#### about page
+
+![Image text](https://github.com/xpioneer/react16-lazy/blob/master/pictures/about.jpg)
+
+#### info page
+
+![Image text](https://github.com/xpioneer/react16-lazy/blob/master/pictures/info.jpg)

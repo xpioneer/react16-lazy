@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 
-const Home = lazy(() => import('./home'))
-const List = lazy(() => import('./list'))
+const Home = lazy(() => import( /* webpackChunkName: "home" */ './home'))
+const List = lazy(() => import( /* webpackChunkName: "list" */ './list'))
 
 export default class App extends Component {
   
@@ -14,7 +14,7 @@ export default class App extends Component {
       <Suspense fallback={<div>loading...</div>}>
         <Switch>
           <Route path='/home' component={props => <Home {...props}/>}/>
-          <Route exact path='/list' component={props => <List {...props}/>}/>
+          <Route exact path='/list' render={() => <List/>}/>
           <Redirect to="/home"></Redirect>
         </Switch>
       </Suspense>

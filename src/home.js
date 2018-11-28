@@ -3,8 +3,8 @@ import { Switch, Route, Link } from 'react-router-dom'
 
 const Default = () => <p>this home page</p>
 const NotFound = () => <div>404</div>
-const About = lazy(() => import('./about'))
-const Info = lazy(() => import('./info'))
+const About = lazy(() => import( /* webpackChunkName: "about" */ './about'))
+const Info = lazy(() => import( /* webpackChunkName: "info" */ './info'))
 
 export default class Home extends Component {
 	render() {
@@ -19,8 +19,8 @@ export default class Home extends Component {
       	<Suspense fallback={<div>chilren page...</div>}>
 		      <Switch>
 		      	<Route exact path="/home" component={props => <Default {...props}/>}/>
-		      	<Route exact path="/home/about" component={props => <About {...props}/>}/>
-		      	<Route exact path="/home/info" component={props => <Info {...props}/>}/>
+		      	<Route exact path="/home/about" render={() => <About/>}/>
+		      	<Route exact path="/home/info" render={() => <Info/>}/>
           	<Route path="*" component={NotFound}/>
 		      </Switch>
 	      </Suspense>

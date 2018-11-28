@@ -29,23 +29,7 @@ module.exports = {
           resolve("src")
         ],
         loader: "babel-loader"
-      },
-      // {
-      //   test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-      //   loader: "url-loader",
-      //   options: {
-      //     name: "assets/fonts/[name].[hash:8].[ext]",
-      //     limit: 2048
-      //   }
-      // },
-      // {
-      //   test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/,
-      //   loader: "url-loader",
-      //   options: {
-      //     name: "assets/imgs/[name].[hash:8].[ext]",
-      //     limit: 2048
-      //   }
-      // }
+      }
     ]
   },
 
