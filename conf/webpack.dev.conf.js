@@ -18,10 +18,7 @@ module.exports = merge(webpackConfig, {
     compress: true, // enable gzip compression
     historyApiFallback: true, // true for index.html upon 404, object for multiple paths
     hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
-    // hotOnly: true,
-    // inline: true,
     https: false, // true for self-signed, object for cert authority
-    // noInfo: true, // only errors & warns on hot reload
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
